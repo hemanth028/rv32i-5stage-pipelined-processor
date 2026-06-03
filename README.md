@@ -45,7 +45,7 @@ Developed as an in-depth study of computer architecture, the design prioritizes 
  └─────────────────────────────────────────────────────────────────────┘
 
   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-  │    IF    │───▶│    ID    │───▶│    EX    │───▶│   MEM    │───▶│    WB    │
+  │    IF    │───▶│    ID    │───▶│    EX    │───▶│   MEM    │───▶│    WB  │
   │          │    │          │    │          │    │          │    │          │
   │ PC Update│    │ Decode   │    │ ALU Ops  │    │ LW / SW  │    │ Reg Write│
   │ Inst Mem │    │ Reg Read │    │ Branch   │    │ Data Mem │    │ ALU / Ld │
@@ -54,8 +54,8 @@ Developed as an in-depth study of computer architecture, the design prioritizes 
   └──────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘
        │               │               │
        │         ┌─────▼─────┐   ┌─────▼──────────────────────┐
-       │         │  Hazard   │   │      Forwarding Unit        │
-       └────────▶│ Detection │   │   MEM→EX  │  WB→EX         │
+       │         │  Hazard   │   │      Forwarding Unit       │
+       └──────▶  │ Detection │  │   MEM→EX  │  WB→EX         │ 
                  │   Unit    │   └────────────────────────────┘
                  └───────────┘
 ```
