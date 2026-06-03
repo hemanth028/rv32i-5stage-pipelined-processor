@@ -1,5 +1,9 @@
 <div align="center">
 
+<img src="https://riscv.org/wp-content/uploads/2020/06/riscv-color.svg" alt="RISC-V Logo" width="220" />
+
+<br><br>
+
 <img src="https://img.shields.io/badge/RISC--V-RV32I-blue?style=for-the-badge&logo=riscv&logoColor=white" />
 <img src="https://img.shields.io/badge/HDL-Verilog-orange?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Simulation-Vivado-red?style=for-the-badge" />
@@ -10,7 +14,7 @@
 
 **A fully verified, hazard-resilient 32-bit RISC-V processor implementation in Verilog HDL**
 
-[Overview](#-overview) · [Architecture](#-pipeline-architecture) · [Features](#-implemented-isa-features) · [Hazard Handling](#-hazard-handling) · [Verification](#-verification) · [Structure](#-repository-structure) · [Future Work](#-future-improvements)
+[Overview](#-overview) · [Architecture](#-pipeline-architecture) · [Features](#-implemented-isa-features) · [Hazard Handling](#-hazard-handling) · [Verification](#-verification) · [Structure](#-repository-structure) · [Lessons Learned](#-lessons-learned) · [Future Work](#-future-improvements)
 
 </div>
 
@@ -70,18 +74,7 @@ Developed as an in-depth study of computer architecture, the design prioritizes 
 
 ## Implemented ISA Features
 
-The processor implements the full **RV32I base integer instruction set**:
-
-| Category | Instructions |
-|----------|-------------|
-| **Arithmetic** | `ADD`, `ADDI`, `SUB` |
-| **Logical** | `AND`, `OR`, `XOR` |
-| **Shift** | `SLL`, `SRL`, `SRA` |
-| **Comparison** | `SLT`, `SLTU` |
-| **Memory** | `LW`, `SW` |
-| **Branch** | `BEQ`, `BNE` |
-| **Jump** | `JAL`, `JALR` |
-| **Upper Immediate** | `LUI`, `AUIPC` |
+The processor implements the full **RV32I base integer instruction set**, including arithmetic (`ADD`, `ADDI`, `SUB`), logical (`AND`, `OR`, `XOR`), shift (`SLL`, `SRL`, `SRA`), comparison (`SLT`, `SLTU`), memory (`LW`, `SW`), branch (`BEQ`, `BNE`), jump (`JAL`, `JALR`), and upper immediate (`LUI`, `AUIPC`) instructions.
 
 ---
 
@@ -224,6 +217,22 @@ riscv-pipelined-processor/
 ├── README.md
 └── .gitignore
 ```
+
+---
+
+## Lessons Learned
+
+This project provided deep, hands-on experience across the full spectrum of processor design:
+
+- **RISC-V ISA implementation** — translating the specification into working hardware logic
+- **Datapath design** — connecting functional units across pipeline stages with correct control flow
+- **Pipeline architecture** — structuring concurrent multi-stage execution for throughput improvement
+- **Hazard mitigation** — understanding and resolving RAW, load-use, and control hazards at the microarchitecture level
+- **Verilog RTL development** — writing synthesizable, well-structured register-transfer level code
+- **Functional verification** — building directed test programs to isolate and confirm individual behaviors
+- **Debugging complex interactions** — tracing multi-cycle bugs across pipeline registers and forwarding paths
+
+The transition from a single-cycle processor to a pipelined architecture was the most impactful learning experience — it made the real cost of hazards and the elegance of forwarding solutions tangible in a way that theory alone cannot convey.
 
 ---
 
