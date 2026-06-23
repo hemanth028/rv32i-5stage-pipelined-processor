@@ -217,7 +217,9 @@ riscv-pipelined-processor/
 ├── README.md
 └── .gitignore
 ```
-
+FOR 100 MHZ clock frequency 
+<img width="2444" height="584" alt="{492FD27A-05B3-4F17-8FB2-2F3368706562}" src="https://github.com/user-attachments/assets/7cdc1757-dab1-46ce-8590-ea1542df47e4" />
+ NOTE:Implementation stratergy is set to Performance_RefinePlacements
 ---
 
 ## Lessons Learned
