@@ -115,32 +115,7 @@ Branches are resolved in the EX stage. If a branch is taken or a jump is encount
 
 **Resolution:** Flush logic clears the IF/ID and ID/EX pipeline registers, and the PC is redirected to the branch/jump target.
 
----
 
-## Major Components
-
-```
-riscv-pipelined-processor/
-│
-├── Program Counter (PC)
-├── Instruction Memory
-├── Register File (32 × 32-bit)
-├── Immediate Generator
-├── ALU
-├── ALU Decoder
-├── Main Control Unit
-├── Data Memory
-├── Forwarding Unit          ← RAW hazard resolution
-├── Hazard Detection Unit    ← load-use stall + control flush
-│
-└── Pipeline Registers
-    ├── IF/ID Register
-    ├── ID/EX Register
-    ├── EX/MEM Register
-    └── MEM/WB Register
-```
-
----
 
 ## Verification
 
