@@ -158,40 +158,7 @@ addi x7, x0, 44       # x7 = 44  (executes)
 x1 = 10 | x2 = 20 | x3 = 30 | x4 = 40 | x5 = 20 | x6 = 99 | x7 = 44
 ```
 
----
 
-## Repository Structure
-
-```
-riscv-pipelined-processor/
-│
-├── src/
-│   ├── top_pipelined.v        ← Top-level integration
-│   ├── alu.v
-│   ├── register_file.v
-│   ├── forwarding_unit.v
-│   ├── hazard_unit.v
-│   ├── if_id_reg.v
-│   ├── id_ex_reg.v
-│   ├── ex_mem_reg.v
-│   ├── mem_wb_reg.v
-│   ├── data_mem.v
-│   └── inst_mem.v
-│
-├── tb/
-│   └── tb.v                   ← Simulation testbench
-│
-├── test_programs/
-│   ├── arithmetic.mem
-│   ├── branch_taken.mem
-│   ├── branch_not_taken.mem
-│   ├── jal.mem
-│   └── jalr.mem
-│
-├── docs/                      ← Architecture documentation
-├── README.md
-└── .gitignore
-```
 FOR 100 MHZ clock frequency 
 <img width="2444" height="584" alt="{492FD27A-05B3-4F17-8FB2-2F3368706562}" src="https://github.com/user-attachments/assets/7cdc1757-dab1-46ce-8590-ea1542df47e4" />
  NOTE:Implementation stratergy is set to Performance_RefinePlacements
